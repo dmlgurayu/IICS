@@ -18,32 +18,12 @@
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
-        "documentState" : "VALID"
+        "documentState" : "INVALID"
       }
     }
   },
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
-    "id" : "3pxRqABmsPukVMReugtaOX",
-    "name" : "cl_Lower_Case",
-    "type" : "CLEANSE",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 1,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "3pxRqABmsPukVMReugtaOX"
-      },
-      "contextAttributes" : [ ],
-      "additionalInfo" : {
-        "description" : null,
-        "contentType" : "Binary",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/DAMALINK_DEMO/DQ"
-  }, {
     "id" : "a8HR41QI5gzbnsMu3I8qEA",
     "name" : "AXON_MMS",
     "type" : "Connection",
@@ -63,5 +43,25 @@
       }
     },
     "path" : "/SYS"
+  }, {
+    "id" : "hXWO3JAQOOpfyLdkNxa5qd",
+    "name" : "verif_Address",
+    "type" : "VERIFIER",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hXWO3JAQOOpfyLdkNxa5qd"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/DAMALINK_DEMO/DQ"
   } ]
 }
