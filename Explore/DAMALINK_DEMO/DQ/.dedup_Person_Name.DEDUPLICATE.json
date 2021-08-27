@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "39tWpkXBL4bkcssf5w1ZcB",
+    "name" : "dedup_Person_Name",
+    "type" : "DEDUPLICATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "39tWpkXBL4bkcssf5w1ZcB"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}
