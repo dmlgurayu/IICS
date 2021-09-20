@@ -1,0 +1,290 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>7w4ARW8UBM7zsZv-gt-561983-2021-09-20T10:53:09.994Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_HR_DETAILS</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>gurayu</types1:CreatedBy>
+      <types1:CreationDate>2021-09-20T10:53:10Z</types1:CreationDate>
+      <types1:ModifiedBy>gurayu</types1:ModifiedBy>
+      <types1:ModificationDate>2021-09-20T13:16:58Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>gurayu</types1:PublishedBy>
+      <types1:PublicationDate>2021-09-20T13:11:30Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_HR_DETAILS/tf_HR_DETAILS.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_HR_DETAILS"
+                   name="tf_HR_DETAILS"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="EMPLOYEE_DETAILS" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-HR-EMPLOYEE-DETAILS</option>
+                  </options>
+               </field>
+               <field description="" name="DEPARTMENT_DETAILS" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-HR-DEPARTMENTS-DETAILS</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedGroups>
+                     <group>Administrators</group>
+                  </allowedGroups>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ktsj39q7" targetId="ktsj39qx"/>
+               </start>
+               <eventContainer id="ktsj39qx">
+                  <service id="ktsj39q6">
+                     <title>EMPLOYEE_DETAILS</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_HR_EMPLOYEE_DETAILS</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">1mXEGKtekGPdsmtSGyJisG</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-HR-EMPLOYEE-DETAILS">temp.EMPLOYEE_DETAILS</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ktsj6mmu" targetId="ktsj6mmm"/>
+                  <events>
+                     <catch faultField="temp.EMPLOYEE_DETAILS/fault"
+                            id="ktsj39qv"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.EMPLOYEE_DETAILS/fault"
+                            id="ktsj39qw"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="ktsj6mmm" type="exclusive">
+                  <title>check_Employee_Status</title>
+                  <flow id="ktsj6mmn">
+                     <eventContainer id="ktsj6mn4">
+                        <service id="ktsj6mn1">
+                           <title>DEPARTMENT_DETAILS</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_HR_DEPARTMENTS_DETAILS</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">71vt4ly6pHljbg059BYfiz</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-HR-DEPARTMENTS-DETAILS">temp.DEPARTMENT_DETAILS</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.DEPARTMENT_DETAILS/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="ktsj6msn" targetId="ktsj6msm"/>
+                        <events>
+                           <catch faultField="temp.DEPARTMENT_DETAILS/fault"
+                                  id="ktsj6mlr"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.DEPARTMENT_DETAILS/fault"
+                                  id="ktsj6mls"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <container id="ktsj6msm" type="exclusive">
+                        <title>check_Department_Status</title>
+                        <flow id="ktsj6msp">
+                           <service id="ktsj6mtq">
+                              <title>if_Department_Succeeds</title>
+                              <serviceName>emailNotificationService</serviceName>
+                              <serviceGUID/>
+                              <serviceInput>
+                                 <parameter name="Email To" source="constant">guray.uzun@damalink.com</parameter>
+                                 <parameter name="Email Cc" source="constant"/>
+                                 <parameter name="Email Subject" source="constant">CDI_DEMO</parameter>
+                                 <parameter name="Email Content Type" source="constant">text</parameter>
+                                 <parameter name="Email Body" source="constant">&lt;p&gt;Employee ve Department yüklemeleri tamamlandı.&lt;/p&gt;</parameter>
+                              </serviceInput>
+                              <serviceOutput/>
+                           </service>
+                           <link id="ktsj6msq" targetId="ktsj6msm" type="containerLink"/>
+                        </flow>
+                        <flow id="ktsj6mss">
+                           <service id="ktsj6mu3">
+                              <title>if_Department_Fails</title>
+                              <serviceName>emailNotificationService</serviceName>
+                              <serviceGUID/>
+                              <serviceInput>
+                                 <parameter name="Email To" source="constant">guray.uzun@damalink.com</parameter>
+                                 <parameter name="Email Cc" source="constant"/>
+                                 <parameter name="Email Subject" source="constant">CDI_DEMO</parameter>
+                                 <parameter name="Email Content Type" source="constant">text</parameter>
+                                 <parameter name="Email Body" source="constant"/>
+                              </serviceInput>
+                              <serviceOutput/>
+                           </service>
+                           <link id="ktsj6mst" targetId="ktsj6msm" type="containerLink"/>
+                        </flow>
+                        <link id="ktsj6mso" targetId="ktsj6msp" type="containerLink">
+                           <condition source="formula">
+                              <function name="contains">
+                                 <arg name="left">{$temp.DEPARTMENT_DETAILS[1]/output[1]/Task_Status}</arg>
+                                 <arg name="right">1</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="ktsj6msr" targetId="ktsj6mss" type="containerLink"/>
+                     </container>
+                     <link id="ktsj6mms" targetId="ktsj6mmm" type="containerLink"/>
+                  </flow>
+                  <flow id="ktsj6mpb">
+                     <service id="ktsj6mpn">
+                        <title>if_Employee_Warnings</title>
+                        <serviceName>emailNotificationService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Email To" source="constant">guray.uzun@damalink.com</parameter>
+                           <parameter name="Email Cc" source="constant"/>
+                           <parameter name="Email Subject" source="constant">CDI_DEMO</parameter>
+                           <parameter name="Email Content Type" source="constant">text</parameter>
+                           <parameter name="Email Body" source="constant">&lt;p&gt;Mapping warning uyarısıyla karşılaştı.&lt;/p&gt;</parameter>
+                        </serviceInput>
+                        <serviceOutput/>
+                     </service>
+                     <link id="ktsj6mpc" targetId="ktsj6mmm" type="containerLink"/>
+                  </flow>
+                  <flow id="ktsj6mmo">
+                     <service id="ktsj6mnx">
+                        <title>if_Employee_Fails</title>
+                        <serviceName>emailNotificationService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Email To" source="constant">guray.uzun@damalink.com</parameter>
+                           <parameter name="Email Cc" source="constant"/>
+                           <parameter name="Email Subject" source="constant">CDI DEMO</parameter>
+                           <parameter name="Email Content Type" source="constant">text</parameter>
+                           <parameter name="Email Body" source="constant">&lt;p&gt;Mapping hata aldı.&lt;/p&gt;</parameter>
+                        </serviceInput>
+                        <serviceOutput/>
+                     </service>
+                     <link id="ktsj6mmt" targetId="ktsj6mmm" type="containerLink"/>
+                  </flow>
+                  <link id="ktsj6mmq" targetId="ktsj6mmn" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.EMPLOYEE_DETAILS[1]/output[1]/Task_Status}</arg>
+                           <arg name="right">1</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="ktsj6mpa" targetId="ktsj6mpb" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.EMPLOYEE_DETAILS[1]/output[1]/Task_Status}</arg>
+                           <arg name="right">2</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="ktsj6mmr" targetId="ktsj6mmo" type="containerLink"/>
+                  <link id="ktsj6mn0" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-HR-EMPLOYEE-DETAILS"
+                              isByCopy="true"
+                              name="mt-HR-EMPLOYEE-DETAILS">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-HR-DEPARTMENTS-DETAILS"
+                              isByCopy="true"
+                              name="mt-HR-DEPARTMENTS-DETAILS">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>1Md1jABRMkrgNNiXjSEum0</types1:GUID>
+      <types1:DisplayName>tf_HR_DETAILS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-09-20T13:34:06.165Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
