@@ -13,10 +13,10 @@
       <types1:CreatedBy>gurayu</types1:CreatedBy>
       <types1:CreationDate>2021-09-20T10:53:10Z</types1:CreationDate>
       <types1:ModifiedBy>gurayu</types1:ModifiedBy>
-      <types1:ModificationDate>2021-09-20T13:16:58Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:ModificationDate>2021-09-22T08:14:54Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>gurayu</types1:PublishedBy>
-      <types1:PublicationDate>2021-09-20T13:11:30Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-09-22T08:14:58Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_HR_DETAILS/tf_HR_DETAILS.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -46,6 +46,32 @@
                      <option name="failOnFault">false</option>
                   </options>
                </field>
+               <field description="" name="DEPARTMENTS" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:sync-DEPARTMENTS</option>
+                  </options>
+               </field>
+               <field description="" name="EMPLOYEES" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:sync-EMPLOYEES</option>
+                  </options>
+               </field>
+               <field description="" name="JOBS" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:sync-JOBS</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
@@ -57,53 +83,156 @@
             </deployment>
             <flow id="a">
                <start id="b">
-                  <link id="ktsj39q7" targetId="ktsj39qx"/>
+                  <link id="ktv63x3k" targetId="ktv63x3j"/>
                </start>
-               <eventContainer id="ktsj39qx">
-                  <service id="ktsj39q6">
-                     <title>EMPLOYEE_DETAILS</title>
-                     <serviceName>ICSExecuteDataTask</serviceName>
-                     <serviceGUID/>
-                     <serviceInput>
-                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
-                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
-                        <parameter name="Task Name" source="constant" updatable="true">mt_HR_EMPLOYEE_DETAILS</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">1mXEGKtekGPdsmtSGyJisG</parameter>
-                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
-                        <parameter name="taskField" source="nested">
-                           <operation source="field" to="mt-HR-EMPLOYEE-DETAILS">temp.EMPLOYEE_DETAILS</operation>
-                        </parameter>
-                     </serviceInput>
-                     <serviceOutput>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Object_Name">Object Name</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Run_Id">Run Id</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Log_Id">Log Id</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Task_Id">Task Id</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Task_Status">Task Status</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Success_Source_Rows">Success Source Rows</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Failed_Source_Rows">Failed Source Rows</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Success_Target_Rows">Success Target Rows</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Failed_Target_Rows">Failed Target Rows</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Start_Time">Start Time</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/End_Time">End Time</operation>
-                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Error_Message">Error Message</operation>
-                     </serviceOutput>
-                  </service>
-                  <link id="ktsj6mmu" targetId="ktsj6mmm"/>
-                  <events>
-                     <catch faultField="temp.EMPLOYEE_DETAILS/fault"
-                            id="ktsj39qv"
-                            interrupting="true"
-                            name="error">
-                        <suspend/>
-                     </catch>
-                     <catch faultField="temp.EMPLOYEE_DETAILS/fault"
-                            id="ktsj39qw"
-                            interrupting="true"
-                            name="warning"/>
-                  </events>
-               </eventContainer>
+               <container id="ktv63x3j" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="ktv63x3n">
+                     <eventContainer id="ktv63x5q">
+                        <service id="ktv63x4c">
+                           <title>DEPARTMENTS</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">sync_DEPARTMENTS</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">aeFkgNOdpGWg9CBRtcRYU2</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">SAAS_DSS</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="sync-DEPARTMENTS">temp.DEPARTMENTS</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.DEPARTMENTS/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.DEPARTMENTS/fault"
+                                  id="ktv63x5o"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.DEPARTMENTS/fault"
+                                  id="ktv63x5p"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="ktv63x3o" targetId="ktv63x3j" type="containerLink"/>
+                  </flow>
+                  <flow id="ktv63x3q">
+                     <eventContainer id="ktv63x69">
+                        <service id="ktv63x4o">
+                           <title>EMPLOYEES</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">sync_EMPLOYEES</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">cX2xveWSceWjfRFBVBKV6C</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">SAAS_DSS</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="sync-EMPLOYEES">temp.EMPLOYEES</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.EMPLOYEES/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.EMPLOYEES/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.EMPLOYEES/fault"
+                                  id="ktv63x67"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.EMPLOYEES/fault"
+                                  id="ktv63x68"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="ktv63x3r" targetId="ktv63x3j" type="containerLink"/>
+                  </flow>
+                  <flow id="ktv63x40">
+                     <eventContainer id="ktv63x6k">
+                        <service id="ktv63x50">
+                           <title>JOBS</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">sync_JOBS</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">6Qoj6CSddEaehrSOGgkvyL</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">SAAS_DSS</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="sync-JOBS">temp.JOBS</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.JOBS/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.JOBS/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.JOBS/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.JOBS/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.JOBS/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.JOBS/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.JOBS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.JOBS/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.JOBS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.JOBS/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.JOBS/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.JOBS/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.JOBS/fault"
+                                  id="ktv63x6i"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.JOBS/fault"
+                                  id="ktv63x6j"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="ktv63x41" targetId="ktv63x3j" type="containerLink"/>
+                  </flow>
+                  <link id="ktv63x3m" targetId="ktv63x3n" type="containerLink"/>
+                  <link id="ktv63x3p" targetId="ktv63x3q" type="containerLink"/>
+                  <link id="ktv63x3z" targetId="ktv63x40" type="containerLink"/>
+                  <link id="ktv63x3l" targetId="ktsj39qx"/>
+               </container>
                <container id="ktsj6mmm" type="exclusive">
                   <title>check_Employee_Status</title>
                   <flow id="ktsj6mmn">
@@ -246,9 +375,87 @@
                         </function>
                      </condition>
                   </link>
+                  <link id="ktv83h6d" targetId="ktv83h6x"/>
                   <link id="ktsj6mmr" targetId="ktsj6mmo" type="containerLink"/>
-                  <link id="ktsj6mn0" targetId="c"/>
                </container>
+               <eventContainer id="ktsj39qx">
+                  <service id="ktsj39q6">
+                     <title>EMPLOYEE_DETAILS</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_HR_EMPLOYEE_DETAILS</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">1mXEGKtekGPdsmtSGyJisG</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-HR-EMPLOYEE-DETAILS">temp.EMPLOYEE_DETAILS</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.EMPLOYEE_DETAILS/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ktsj6mmu" targetId="ktsj6mmm"/>
+                  <events>
+                     <catch faultField="temp.EMPLOYEE_DETAILS/fault"
+                            id="ktsj39qv"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.EMPLOYEE_DETAILS/fault"
+                            id="ktsj39qw"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="ktv83h6x">
+                  <service id="ktv83h6c">
+                     <title>Command Task 1</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">Command Task 1</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">01006925000000000007:Damalink</parameter>
+                        <parameter name="Script Name" source="constant">cdi_demo.sh</parameter>
+                        <parameter name="Input Arguments" source="constant">ABCDEF</parameter>
+                        <parameter name="Work Directory" source="constant">/home/infa/CDI_SHARED</parameter>
+                        <parameter name="RuntimeEnvGUID" source="constant">cnfM3x1KNATeOvBe0taJw6</parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Command Task 1/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Command Task 1/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ktv83h6e" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.Command Task 1/fault"
+                            id="ktv83h6w"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
                <end id="c"/>
             </flow>
             <dependencies>
@@ -280,11 +487,55 @@
                      <field label="Fault" name="fault" type="reference"/>
                   </detail>
                </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="sync-DEPARTMENTS"
+                              isByCopy="true"
+                              name="sync-DEPARTMENTS">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="sync-EMPLOYEES"
+                              isByCopy="true"
+                              name="sync-EMPLOYEES">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="sync-JOBS"
+                              isByCopy="true"
+                              name="sync-JOBS">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
             </dependencies>
          </taskflow>
       </types1:Entry>
       <types1:GUID>1Md1jABRMkrgNNiXjSEum0</types1:GUID>
       <types1:DisplayName>tf_HR_DETAILS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-09-20T13:34:06.165Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-09-22T08:15:27.264Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -21,6 +21,26 @@
   },
   "dataFileExtension" : "xml",
   "objectRefs" : [ {
+    "id" : "6Qoj6CSddEaehrSOGgkvyL",
+    "name" : "sync_JOBS",
+    "type" : "DSS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100690I00000000000B"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_DEMO/D02_Tasks"
+  }, {
     "id" : "71vt4ly6pHljbg059BYfiz",
     "name" : "mt_HR_DEPARTMENTS_DETAILS",
     "type" : "MTT",
@@ -32,17 +52,34 @@
       "repoInfo" : {
         "repoHandle" : "0100690Z00000000000Y"
       },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
+      "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     },
-    "path" : "/Explore/Demo Cloud Data Integration/D02_Tasks"
+    "path" : "/Explore/CDI_DEMO/D02_Tasks"
+  }, {
+    "id" : "cnfM3x1KNATeOvBe0taJw6",
+    "name" : "Damalink",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01006925000000000007"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
   }, {
     "id" : "1mXEGKtekGPdsmtSGyJisG",
     "name" : "mt_HR_EMPLOYEE_DETAILS",
@@ -55,16 +92,53 @@
       "repoInfo" : {
         "repoHandle" : "0100690Z00000000000X"
       },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
+      "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     },
-    "path" : "/Explore/Demo Cloud Data Integration/D02_Tasks"
+    "path" : "/Explore/CDI_DEMO/D02_Tasks"
+  }, {
+    "id" : "aeFkgNOdpGWg9CBRtcRYU2",
+    "name" : "sync_DEPARTMENTS",
+    "type" : "DSS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100690I00000000000C"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_DEMO/D02_Tasks"
+  }, {
+    "id" : "cX2xveWSceWjfRFBVBKV6C",
+    "name" : "sync_EMPLOYEES",
+    "type" : "DSS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100690I00000000000A"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_DEMO/D02_Tasks"
   } ]
 }
