@@ -55,17 +55,14 @@
       "repoInfo" : {
         "repoHandle" : "01006917000000000027"
       },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
+      "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     },
-    "path" : "/Explore/Demo Cloud Data Integration/D01_Mappings"
+    "path" : "/Explore/CDI_DEMO/D01_Mappings"
   }, {
     "id" : "9v8AHZo9FcMlsTS1iWfZiY",
     "name" : "CDI_DEMO",
