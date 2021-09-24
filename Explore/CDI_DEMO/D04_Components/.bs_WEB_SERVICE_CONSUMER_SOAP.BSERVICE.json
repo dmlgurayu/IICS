@@ -1,7 +1,7 @@
 {
   "objectInfo" : {
     "id" : "4DpwR3fWs82hijalhPMnIY",
-    "name" : "bs_WEB_SERVICE_CONSUMER",
+    "name" : "bs_WEB_SERVICE_CONSUMER_SOAP",
     "type" : "BSERVICE",
     "metadata" : {
       "modelVersion" : {
@@ -28,7 +28,7 @@
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
     "id" : "9T0hJ81ylivbOwJFLynGgJ",
-    "name" : "WS_CONSUMER_AXON",
+    "name" : "WS_CONSUMER_SOAP",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
