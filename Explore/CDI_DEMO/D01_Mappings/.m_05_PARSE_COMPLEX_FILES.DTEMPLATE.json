@@ -1,0 +1,107 @@
+{
+  "objectInfo" : {
+    "id" : "ljNrp410Gawk4AlqXn5T2t",
+    "name" : "m_05_PARSE_COMPLEX_FILES",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100691700000000002C"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "3nVDX1PPR45dV5nQZ3vIes",
+    "name" : "ism_CUSTOMERS_XML",
+    "type" : "STRUCTURE_DISCOVERY",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01006930000000000005"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_DEMO/D04_Components"
+  }, {
+    "id" : "4PvHP5v6OCndPCBDVBRI6f",
+    "name" : "ism_CUSTOMERS_JSON",
+    "type" : "STRUCTURE_DISCOVERY",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01006930000000000004"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_DEMO/D04_Components"
+  }, {
+    "id" : "kX0gJwb6LIpeg0dEkmeZSC",
+    "name" : "FF_CDI_DEMO",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100690B00000000001T"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "kBEaSxQfS8kkPuySyqOxMY",
+    "name" : "seq_CUSTOMER_ID",
+    "type" : "SequenceGenerator",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01006942000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_DEMO/D04_Components"
+  } ]
+}
