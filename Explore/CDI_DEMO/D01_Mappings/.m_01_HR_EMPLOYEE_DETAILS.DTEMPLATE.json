@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "Versiyon 2 için description girilecek.",
+        "description" : "Employee bilgilerinin doldurulduğu mapping.",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
