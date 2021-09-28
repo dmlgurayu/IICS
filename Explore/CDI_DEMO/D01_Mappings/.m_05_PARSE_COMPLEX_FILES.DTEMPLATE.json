@@ -24,6 +24,26 @@
   },
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
+    "id" : "eyYWhcnfEi1jzVsPhNBKi8",
+    "name" : "EXTERNAL_HIVE",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100690B00000000001V"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "bdpclusterdaki Hive veritabanı",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
     "id" : "3nVDX1PPR45dV5nQZ3vIes",
     "name" : "ism_CUSTOMERS_XML",
     "type" : "STRUCTURE_DISCOVERY",
@@ -83,25 +103,5 @@
       }
     },
     "path" : "/SYS"
-  }, {
-    "id" : "kBEaSxQfS8kkPuySyqOxMY",
-    "name" : "seq_CUSTOMER_ID",
-    "type" : "SequenceGenerator",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 0,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "01006942000000000002"
-      },
-      "contextAttributes" : null,
-      "additionalInfo" : {
-        "description" : "",
-        "contentType" : "JSON",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/CDI_DEMO/D04_Components"
   } ]
 }
