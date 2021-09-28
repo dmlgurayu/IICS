@@ -13,10 +13,10 @@
       <types1:CreatedBy>gurayu</types1:CreatedBy>
       <types1:CreationDate>2021-09-20T10:53:10Z</types1:CreationDate>
       <types1:ModifiedBy>gurayu</types1:ModifiedBy>
-      <types1:ModificationDate>2021-09-23T13:59:08Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-09-28T13:06:54Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>gurayu</types1:PublishedBy>
-      <types1:PublicationDate>2021-09-24T05:13:00Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-09-28T13:07:22Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_HR_DETAILS/tf_HR_DETAILS.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -32,12 +32,15 @@
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <input>
-               <parameter description="" name="Cmd_Input" type="string">
+               <parameter description="" name="Cmd_Input" required="true" type="string">
                   <options>
                      <option name="required">false</option>
                   </options>
                </parameter>
-               <parameter description="" name="Hire_Date_Period" type="string">
+               <parameter description=""
+                          name="Hire_Date_Period"
+                          required="true"
+                          type="string">
                   <options>
                      <option name="required">false</option>
                   </options>
@@ -242,8 +245,8 @@
                   </flow>
                   <link id="ktv63x3m" targetId="ktv63x3n" type="containerLink"/>
                   <link id="ktv63x3p" targetId="ktv63x3q" type="containerLink"/>
-                  <link id="ktx027ff" targetId="ktx027fe"/>
                   <link id="ktv63x3z" targetId="ktv63x40" type="containerLink"/>
+                  <link id="ktx027ff" targetId="ktx027fe"/>
                </container>
                <container id="ktsj6mmm" type="exclusive">
                   <title>check_Employee_Status</title>
@@ -558,5 +561,5 @@
       <types1:GUID>1Md1jABRMkrgNNiXjSEum0</types1:GUID>
       <types1:DisplayName>tf_HR_DETAILS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-09-27T07:56:11.241Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-09-28T13:07:42.197Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
