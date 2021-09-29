@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "dDHUluej3w7gbhqWMoAr4O",
+    "name" : "INFA_QLIK_DEMO",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Informatica-Qlik entegrasyon çalışmalarını içerir.",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}
