@@ -1,0 +1,67 @@
+{
+  "objectInfo" : {
+    "id" : "63aKn8EcZWaiicP6Eti9az",
+    "name" : "tf_CUSTOMER_ORDERS",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UconQYWeIssjqlu-gt-2289042-2021-09-30T07:32:40.755Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "2Rl0ZFEUQJqbwLQunvKv6r",
+    "name" : "mt01_ORDER_SUMMARY",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100690Z000000000014"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/INFA_QLIK_DEMO"
+  }, {
+    "id" : "7053KSe10WEbX9nDb2vzcl",
+    "name" : "mt01_ORDER_SUMMARY_EXCEPTIONS",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100690Z000000000015"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/INFA_QLIK_DEMO"
+  } ]
+}
