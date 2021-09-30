@@ -40,28 +40,5 @@
       }
     },
     "path" : "/Explore/INFA_QLIK_DEMO"
-  }, {
-    "id" : "7053KSe10WEbX9nDb2vzcl",
-    "name" : "mt01_ORDER_SUMMARY_EXCEPTIONS",
-    "type" : "MTT",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 0,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "0100690Z000000000015"
-      },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
-      "additionalInfo" : {
-        "description" : "",
-        "contentType" : "JSON",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/INFA_QLIK_DEMO"
   } ]
 }

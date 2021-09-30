@@ -44,6 +44,26 @@
     },
     "path" : "/SYS"
   }, {
+    "id" : "9NBKcr51Vujkyp6qCdFhcl",
+    "name" : "mapp_FILTER_CITIZEN_NUMBER",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01006940000000000005"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/INFA_QLIK_DEMO"
+  }, {
     "id" : "3BgMwSWUkxcibfDbN0nREZ",
     "name" : "QLIK_DEMO_ODS",
     "type" : "Connection",
