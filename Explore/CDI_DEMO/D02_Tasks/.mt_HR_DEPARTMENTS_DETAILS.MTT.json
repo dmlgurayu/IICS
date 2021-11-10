@@ -25,7 +25,7 @@
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
     "id" : "9F2fRm23xzob1J7jcOFEaU",
-    "name" : "m_HR_DEPARTMENTS_DETAILS",
+    "name" : "m_02_HR_DEPARTMENTS_DETAILS",
     "type" : "DTEMPLATE",
     "metadata" : {
       "modelVersion" : {
@@ -35,17 +35,14 @@
       "repoInfo" : {
         "repoHandle" : "01006917000000000028"
       },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
+      "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     },
-    "path" : "/Explore/Demo Cloud Data Integration/D01_Mappings"
+    "path" : "/Explore/CDI_DEMO/D01_Mappings"
   }, {
     "id" : "cnfM3x1KNATeOvBe0taJw6",
     "name" : "Damalink",
