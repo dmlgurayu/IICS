@@ -96,7 +96,7 @@
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
-        "documentState" : "VALID"
+        "documentState" : "INVALID"
       }
     },
     "path" : "/Explore/CDI_DEMO/D02_Tasks"

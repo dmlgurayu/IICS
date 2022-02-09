@@ -1,0 +1,64 @@
+{
+  "objectInfo" : {
+    "id" : "0BfxctdVZU6emMlzkSIl0V",
+    "name" : "tf_EVENT_WAIT",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "wEYrwn2H0Fdw8jI-gt-5412176-2022-02-09T13:45:19.367Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "5QJnWq8oBoxbq4ZVwq5yky",
+    "name" : "mt_03_LOAD_FROM_FTP",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100690Z000000000022"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_DEMO/D02_Tasks"
+  }, {
+    "id" : "16uOeWKZa72l31QNsdKTaP",
+    "name" : "fl_EVENT_WAIT",
+    "type" : "MI_FILE_LISTENER",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "12790"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI_DEMO/D04_Components"
+  } ]
+}
