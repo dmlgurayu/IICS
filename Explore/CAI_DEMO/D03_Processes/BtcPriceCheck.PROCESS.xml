@@ -1,0 +1,73 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>4NPwLdqcgm8lnCm-gt-20124912-2022-02-17T14:44:35.892Z::pd.xml</types1:EntryId>
+      <types1:Name>BtcPriceCheck</types1:Name>
+      <types1:ParentFlowIds>VsKKkhEuHWvJ4rs-gt-18395234-2022-03-23T22:55:46.763Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:infa_sec_agent01,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>gurayu</types1:CreatedBy>
+      <types1:CreationDate>2022-02-17T14:44:36Z</types1:CreationDate>
+      <types1:ModifiedBy>gurayu</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-18T07:24:35Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>gurayu</types1:PublishedBy>
+      <types1:PublicationDate>2022-03-23T22:50:45Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.BtcPriceCheck/BtcPriceCheck.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="BtcPriceCheck"
+                  name="BtcPriceCheck"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:infa_sec_agent01,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <output>
+               <field description="" name="BtcPrice" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <targetLocation>infa_sec_agent01</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kzr3m3ln" targetId="kzr3m3lm"/>
+               </start>
+               <service id="kzr3m3lm">
+                  <title>getBtcPrice</title>
+                  <serviceName>getBtcPrice:getBtcPrice</serviceName>
+                  <serviceGUID>c8ORVcSQCuKgjAhpRLsiKb</serviceGUID>
+                  <serviceInput/>
+                  <link id="kzs2pyrd" targetId="kzs2pyrc"/>
+               </service>
+               <assignment id="kzs2pyrc">
+                  <title>Assignment to BtcPrice</title>
+                  <operation source="field" to="output.BtcPrice">output.btcPrice</operation>
+                  <link id="kzs2pyre" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>3ruQZ8yUz8YlAKoM6fKFMK</types1:GUID>
+      <types1:DisplayName>BtcPriceCheck</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-03-24T08:40:31.743Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

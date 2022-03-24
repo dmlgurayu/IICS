@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "3ruQZ8yUz8YlAKoM6fKFMK",
+    "name" : "BtcPriceCheck",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "4NPwLdqcgm8lnCm-gt-20124912-2022-02-17T14:44:35.892Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "c8ORVcSQCuKgjAhpRLsiKb",
+    "name" : "getBtcPrice",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Jgki8MZgpDqotxG-gt-17893159-2022-02-17T14:42:25.575Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAI_DEMO/D02_App_Connectors"
+  } ]
+}

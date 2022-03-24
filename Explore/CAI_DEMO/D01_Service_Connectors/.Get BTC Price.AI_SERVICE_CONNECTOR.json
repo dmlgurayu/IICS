@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "6eMADact7usb8dTzJ2IFWJ",
+    "name" : "Get BTC Price",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "LMVX3cjk91pqrzY-gt-20129862-2022-02-17T14:18:20.605Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Connector to get BTC price",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}
